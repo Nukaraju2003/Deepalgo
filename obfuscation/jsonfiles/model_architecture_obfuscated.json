@@ -1,0 +1,362 @@
+{
+  "mod": "keras",
+  "cls_name": "Sequential",
+  "cfg": {
+    "nm": "sequential",
+    "trbl": true,
+    "dt": {
+      "mod": "keras",
+      "cls_name": "DTypePolicy",
+      "cfg": {
+        "nm": "float32"
+      },
+      "reg_nm": null
+    },
+    "lyrs": [
+      {
+        "mod": "keras.layers",
+        "cls_name": "InputLayer",
+        "cfg": {
+          "bsh": [
+            null,
+            40,
+            1
+          ],
+          "dt": "float32",
+          "sparse": false,
+          "nm": "input_layer"
+        },
+        "reg_nm": null
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "LSTM",
+        "cfg": {
+          "nm": "lstm",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "return_sequences": false,
+          "return_state": false,
+          "go_backwards": false,
+          "stateful": false,
+          "unroll": false,
+          "zero_output_for_mask": false,
+          "u": 256,
+          "act": "tanh",
+          "rec_act": "sigmoid",
+          "use_bias": true,
+          "kern_init": {
+            "mod": "keras.initializers",
+            "cls_name": "GlorotUniform",
+            "cfg": {
+              "sd": null
+            },
+            "reg_nm": null
+          },
+          "recurrent_initializer": {
+            "mod": "keras.initializers",
+            "cls_name": "OrthogonalInitializer",
+            "cfg": {
+              "gain": 1.0,
+              "sd": null
+            },
+            "reg_nm": null
+          },
+          "bias_init": {
+            "mod": "keras.initializers",
+            "cls_name": "Zeros",
+            "cfg": {},
+            "reg_nm": null
+          },
+          "unit_forget_bias": true,
+          "kernel_regularizer": null,
+          "recurrent_regularizer": null,
+          "bias_regularizer": null,
+          "activity_regularizer": null,
+          "kernel_constraint": null,
+          "recurrent_constraint": null,
+          "bias_constraint": null,
+          "drop": 0.0,
+          "recurrent_dropout": 0.0,
+          "sd": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            40,
+            1
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dropout",
+        "cfg": {
+          "nm": "dropout",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "r": 0.2,
+          "sd": null,
+          "noise_shape": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            256
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dense",
+        "cfg": {
+          "nm": "dense",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "u": 128,
+          "act": "relu",
+          "use_bias": true,
+          "kern_init": {
+            "mod": "keras.initializers",
+            "cls_name": "GlorotUniform",
+            "cfg": {
+              "sd": null
+            },
+            "reg_nm": null
+          },
+          "bias_init": {
+            "mod": "keras.initializers",
+            "cls_name": "Zeros",
+            "cfg": {},
+            "reg_nm": null
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            256
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dropout",
+        "cfg": {
+          "nm": "dropout_1",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "r": 0.2,
+          "sd": null,
+          "noise_shape": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            128
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dense",
+        "cfg": {
+          "nm": "dense_1",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "u": 64,
+          "act": "relu",
+          "use_bias": true,
+          "kern_init": {
+            "mod": "keras.initializers",
+            "cls_name": "GlorotUniform",
+            "cfg": {
+              "sd": null
+            },
+            "reg_nm": null
+          },
+          "bias_init": {
+            "mod": "keras.initializers",
+            "cls_name": "Zeros",
+            "cfg": {},
+            "reg_nm": null
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            128
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dropout",
+        "cfg": {
+          "nm": "dropout_2",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "r": 0.2,
+          "sd": null,
+          "noise_shape": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            64
+          ]
+        }
+      },
+      {
+        "mod": "keras.layers",
+        "cls_name": "Dense",
+        "cfg": {
+          "nm": "dense_2",
+          "trbl": true,
+          "dt": {
+            "mod": "keras",
+            "cls_name": "DTypePolicy",
+            "cfg": {
+              "nm": "float32"
+            },
+            "reg_nm": null
+          },
+          "u": 7,
+          "act": "softmax",
+          "use_bias": true,
+          "kern_init": {
+            "mod": "keras.initializers",
+            "cls_name": "GlorotUniform",
+            "cfg": {
+              "sd": null
+            },
+            "reg_nm": null
+          },
+          "bias_init": {
+            "mod": "keras.initializers",
+            "cls_name": "Zeros",
+            "cfg": {},
+            "reg_nm": null
+          },
+          "kernel_regularizer": null,
+          "bias_regularizer": null,
+          "kernel_constraint": null,
+          "bias_constraint": null
+        },
+        "reg_nm": null,
+        "build_config": {
+          "in_shp": [
+            null,
+            64
+          ]
+        }
+      }
+    ],
+    "build_input_shape": [
+      null,
+      40,
+      1
+    ]
+  },
+  "reg_nm": null,
+  "build_config": {
+    "in_shp": [
+      null,
+      40,
+      1
+    ]
+  },
+  "compile_config": {
+    "optimizer": {
+      "mod": "keras.optimizers",
+      "cls_name": "Adam",
+      "cfg": {
+        "nm": "adam",
+        "l_rate": 0.0010000000474974513,
+        "weight_decay": null,
+        "clipnorm": null,
+        "global_clipnorm": null,
+        "clipvalue": null,
+        "use_ema": false,
+        "ema_momentum": 0.99,
+        "ema_overwrite_frequency": null,
+        "loss_scale_factor": null,
+        "gradient_accumulation_steps": null,
+        "beta_1": 0.9,
+        "beta_2": 0.999,
+        "epsilon": 1e-07,
+        "amsgrad": false
+      },
+      "reg_nm": null
+    },
+    "ls": {
+      "mod": "builtins",
+      "cls_name": "function",
+      "cfg": "categorical_crossentropy",
+      "reg_nm": "function"
+    },
+    "loss_weights": null,
+    "mtcs": [
+      "accuracy"
+    ],
+    "weighted_metrics": null,
+    "run_eagerly": false,
+    "steps_per_execution": 1,
+    "jit_compile": false
+  }
+}
